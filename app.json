@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/welcome/welcome"
+  ],
+
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d827d7",
+    "navigationBarTitleText": "友趣",
+    "navigationBarTextStyle": "white"
+  }
+}
