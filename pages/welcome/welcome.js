@@ -2,7 +2,7 @@
 // start雷达图初始化数据
 var topText = ["帅气", "时尚", "典雅", "甜美", "自然", "浪漫", "文雅", "摩登"];
 
-var allSpaceTime = 50;//线程执行间隔时间
+var allSpaceTime = 50; //线程执行间隔时间
 
 var animateinterval = '';
 
@@ -146,7 +146,7 @@ Page({
   
   */
 
-  onLoad: function (options) {
+  onLoad: function(options) {
 
     topText = ["帅气", "时尚", "典雅", "甜美", "自然", "浪漫", "文雅", "摩登"]
 
@@ -160,7 +160,7 @@ Page({
   
   */
 
-  onReady: function () {
+  onReady: function() {
 
     this.randDomText();
 
@@ -174,13 +174,23 @@ Page({
   
   */
 
-  onShow: function () {
+  onShow: function() {
 
+  },
+
+  /**
+   * 前往主界面
+   */
+  goToMain: function() {
+    wx.switchTab({
+      url: "../main/book/book"
+    });
+    
   },
 
   // 文字闪烁动画
 
-  randDomText: function () {//endText最终显示文字，texts闪烁文字，time延迟时间,spacetime闪烁频率,stime闪烁周期
+  randDomText: function() { //endText最终显示文字，texts闪烁文字，time延迟时间,spacetime闪烁频率,stime闪烁周期
 
     var that = this;
 
@@ -192,13 +202,13 @@ Page({
 
       rang['isRun'] = false; //是否已经开始在执行了
 
-      rang['isStop'] = false;//是否已经执行完毕了
+      rang['isStop'] = false; //是否已经执行完毕了
 
     };
 
 
 
-    animateinterval = setInterval(function () {
+    animateinterval = setInterval(function() {
 
       var stop = true;
 
@@ -218,9 +228,9 @@ Page({
 
           if (!rangXX['isRun']) { //如果还没开始跑，判断下时间是否已经到开始跑的时间
 
-            if (rangXX['runTime'] >= rangXX['beginTime']) {//
+            if (rangXX['runTime'] >= rangXX['beginTime']) { //
 
-              rangXX['isRun'] = true;//到开始跑时间了
+              rangXX['isRun'] = true; //到开始跑时间了
 
             } else {
 
@@ -236,7 +246,7 @@ Page({
 
               rangXX['lastWord'] = rangXX['endText'];
 
-              showData['text' + (i + 1)] = rangXX['endText'];//显示最后的词
+              showData['text' + (i + 1)] = rangXX['endText']; //显示最后的词
 
             }
 
@@ -290,7 +300,7 @@ Page({
   
   */
 
-  onHide: function () {
+  onHide: function() {
 
   },
 
@@ -302,7 +312,7 @@ Page({
   
   */
 
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
@@ -314,7 +324,7 @@ Page({
   
   */
 
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
@@ -326,7 +336,7 @@ Page({
   
   */
 
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
@@ -338,7 +348,7 @@ Page({
   
   */
 
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 

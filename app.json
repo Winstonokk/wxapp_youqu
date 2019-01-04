@@ -1,12 +1,53 @@
 {
   "pages": [
-    "pages/welcome/welcome"
+    "pages/welcome/welcome",
+    "pages/main/book/book",
+    "pages/main/girl/girl",
+    "pages/main/mine/mine",
+    "pages/main/video/video"
   ],
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#d827d7",
     "navigationBarTitleText": "友趣",
     "navigationBarTextStyle": "white"
-  }
+  },
+
+ "tabBar": {
+  "color": "#626567",
+  "selectedColor": "#d827d7",
+  "backgroundColor": "#FBFBFB",
+  "borderStyle": "white",
+  "list": [
+    {
+      "pagePath": "pages/main/book/book",
+      "text": "图书",
+      "iconPath": "images/book_nor.png",
+      "selectedIconPath": "images/book_sel.png"
+    },
+    {
+      "pagePath": "pages/main/girl/girl",
+      "text": "美女",
+      "iconPath": "images/girl_nor.png",
+      "selectedIconPath": "images/girl_sel.png"
+    },
+    {
+      "pagePath": "pages/main/video/video",
+      "text": "视频",
+      "iconPath": "images/video_nor.png",
+      "selectedIconPath": "images/video_sel.png"
+    },
+    {
+      "pagePath": "pages/main/mine/mine",
+      "text": "我的",
+      "iconPath": "images/mine_nor.png",
+      "selectedIconPath": "images/mine_sel.png"
+    }
+  ]
+},
+"networkTimeout": {
+  "request": 10000,
+  "downloadFile": 10000
+},
+"debug": true
 }

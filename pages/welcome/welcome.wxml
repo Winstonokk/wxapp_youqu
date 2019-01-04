@@ -15,7 +15,7 @@
   </view>
   
   <view class='moto-container'>
-    <text class='moto'> Let's fun</text>
+    <text class='moto' bindtap='goToMain'> Let's fun</text>
   </view>
 
 </view>
