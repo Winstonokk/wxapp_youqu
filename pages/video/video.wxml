@@ -1,2 +1,30 @@
-<!--pages/main/video/video.wxml-->
-<text>pages/main/video/video.wxml</text>
+<view class="top-tab flex-wrp flex-tab ">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:key="item" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+
+<scroll-view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+
+    <text>热点</text>
+
+  </view>
+
+  <view class="ctnt1" hidden="{{currentNavtab==1 ? '' : true}}">
+    <text>搞笑</text>
+
+  </view>
+
+  <view class="ctnt2" hidden="{{currentNavtab==2 ? '' : true}}">
+
+    <text>娱乐</text>
+  </view>
+
+  <view class="ctnt3" hidden="{{currentNavtab==3 ? '' : true}}">
+
+    <text>精品</text>
+  </view>
+
+</scroll-view>
