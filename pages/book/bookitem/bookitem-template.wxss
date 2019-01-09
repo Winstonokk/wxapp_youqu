@@ -1,0 +1,36 @@
+@import "/pages/book/stars/stars-template.wxss";
+
+.container{
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx;
+  background-color: #fff;
+}
+.bookImg{
+  width: 170rpx;
+  /* height: 260rpx; */
+}
+.content_container{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  height: 260rpx;
+}
+.bookName{
+  color: black;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.bookPublish{
+  color: gray;
+  font-size: 13px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.bookContent{
+  color: gray;
+  font-size: 10px;
+  margin-left: 10px;
+  margin-top: 8px;
+  max-height: 100rpx;
+}

@@ -1,0 +1,12 @@
+<import src="../stars/stars-template.wxml" />
+<template name="bookTemplate">
+  <view class='container' catchtap="onBookTap" data-bookId="{{bookId}}">
+    <image class='bookImg' src="{{coverageUrl}}" mode="widthFix"> </image>
+    <view class='content_container'>
+      <text class='bookName'>{{title}}</text>
+      <template is="starsTemplate" data="{{stars:stars, score: average}}" />
+      <text class='bookPublish'>{{publisher}}</text>
+      <text class='bookContent' decode="{{true}}">&nbsp;&nbsp;{{summary}}</text>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,25 @@
+
+@import "/pages/book/booklist/booklist-template.wxss";
+
+.top-tab{
+  width: 100%;
+  height: 80rpx;
+  background: #d827d7;
+  color: #FFbbbbbb;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  box-shadow: 0 2px 2px #bebebe;
+  margin: 0 0 8rpx 0;
+  z-index: 9999;
+}
+
+.toptab.active{
+  color: #ffffff;
+  border-bottom: solid 2px #ffffff;
+}
+
+.books-template {
+  margin-bottom: 30rpx;
+  background-color: #f2f2f2;
+}
+

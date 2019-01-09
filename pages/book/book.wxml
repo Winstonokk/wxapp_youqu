@@ -1,0 +1,64 @@
+<import src="/pages/book/stars/stars-template.wxml" />
+<import src="/pages/book/booklist/booklist-template.wxml" />
+
+<view class="top-tab flex-wrp flex-tab ">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:key="item" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+
+<scroll-view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+
+    <view class='books-template'>
+      <template is="bookListTemplate" data="{{...newBook}}" />
+    </view>
+
+    <!-- <view class='container' catchtap="onBookTap" data-bookId="newBook.books[0].bookId">
+      <image class='bookImg' src="{{newBook.books[0].coverageUrl}}"> </image>
+      <view class='content_container'>
+        <text class='bookName'>{{newBook.books[0].title}}</text>
+        <template is="starsTemplate" data="{{stars:newBook.books[0].stars, score: newBook.books[0].average}}" />
+        <text class='bookPublish'>{{newBook.books[0].publisher}}</text>
+        <text class='bookContent'decode="{{true}}">&nbsp;&nbsp;{{newBook.books[0].summary}}</text>
+      </view>
+    </view> -->
+
+  </view>
+
+  <view class="ctnt1" hidden="{{currentNavtab==1 ? '' : true}}">
+
+    <view class='books-template'>
+      <template is="bookListTemplate" data="{{...hotBook}}" />
+    </view>
+
+    <!-- <view class='container' catchtap="onBookTap" data-bookId="hotBook.books[0].bookId">
+      <image class='bookImg' src="{{hotBook.books[0].coverageUrl}}"> </image>
+      <view class='content_container'>
+        <text class='bookName'>{{hotBook.books[0].title}}</text>
+        <template is="starsTemplate" data="{{stars:hotBook.books[0].stars, score: hotBook.books[0].average}}" />
+        <text class='bookPublish'>{{hotBook.books[0].publisher}}</text>
+        <text class='bookContent' decode="{{true}}">&nbsp;&nbsp;{{hotBook.books[0].summary}}</text>
+      </view>
+    </view> -->
+  </view>
+
+  <view class="ctnt2" hidden="{{currentNavtab==2 ? '' : true}}">
+
+    <view class='books-template'>
+      <template is="bookListTemplate" data="{{...tuijianBook}}" />
+    </view>
+
+    <!-- <view class='container' catchtap="onBookTap" data-bookId="tuijianBook.books[0].bookId">
+      <image class='bookImg' src="{{tuijianBook.books[0].coverageUrl}}"> </image>
+      <view class='content_container'>
+        <text class='bookName'>{{tuijianBook.books[0].title}}</text>
+        <template is="starsTemplate" data="{{stars:tuijianBook.books[0].stars, score: tuijianBook.books[0].average}}" />
+        <text class='bookPublish'>{{tuijianBook.books[0].publisher}}</text>
+        <text class='bookContent' decode="{{true}}">&nbsp;&nbsp;{{tuijianBook.books[0].summary}}</text>
+      </view>
+    </view> -->
+  </view>
+
+</scroll-view>

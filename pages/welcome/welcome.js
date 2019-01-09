@@ -183,7 +183,7 @@ Page({
    */
   goToMain: function() {
     wx.switchTab({
-      url: "../main/book/book"
+      url: "../book/book"
     });
     
   },
