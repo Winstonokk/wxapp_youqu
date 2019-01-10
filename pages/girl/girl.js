@@ -4,6 +4,7 @@ let col2H = 0;
 
 var all_loadingCount=0;
 var all_images=[];
+var start_page = 0;
 
 Page({
 
@@ -53,8 +54,8 @@ Page({
 
     let images = this.all_images;
 
-    console.log("hhhhhhhhhhhhhhhhhhh");
-    console.log(images);
+    // console.log("hhhhhhhhhhhhhhhhhhh");
+    // console.log(images);
 
     let imageObj = null;
 
@@ -92,15 +93,15 @@ Page({
     }
 
     this.setData(data);
-    console.log("ggggggggggggggggggg");
-    console.log(data);
+    // console.log("ggggggggggggggggggg");
+    // console.log(data);
   },
 
   getGirlListData: function() {
     var that = this;
 
     var size = 20;
-    var page = 1;
+    var page = start_page +1;
     var girlUrl = app.globalData.gankBase +
       "/api/data/福利/" + size + "/" + page;
     var settedKey = "girlData";
@@ -113,7 +114,9 @@ Page({
         "Content-Type": "json"
       },
       success: function(res) {
+        start_page=start_page+1;
         console.log(res)
+        console.log("wwwwww" + start_page)
         that.processGirlData(res.data, settedKey)
       },
       fail: function(error) {

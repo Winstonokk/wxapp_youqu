@@ -42,10 +42,10 @@ Page({
     var goodVideosUrl = app.globalData.videoBase +
       "/nc/video/list/" + tag4 + "/n/" + page + "-10.html";
 
-    this.getVideoListData(hotVideosUrl, "hotVideos", "热点");
-    this.getVideoListData(jokeVideosUrl, "jokeVideos", "搞笑");
-    this.getVideoListData(yuleVideosUrl, "yuleVideos", "娱乐");
-    this.getVideoListData(goodVideosUrl, "goodVideos", "精品");
+    this.getVideoListData(hotVideosUrl, "hotVideos", tag1);
+    this.getVideoListData(jokeVideosUrl, "jokeVideos", tag2);
+    this.getVideoListData(yuleVideosUrl, "yuleVideos", tag3);
+    this.getVideoListData(goodVideosUrl, "goodVideos", tag4);
   },
 
   getVideoListData: function (url, settedKey, categoryTitle) {
@@ -53,13 +53,13 @@ Page({
     console.log(url)
     wx.request({
       url: url,
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: 'GET', 
       header: {
         "Content-Type": "json"
       },
       success: function (res) {
         console.log(res)
-        // that.processDoubanData(res.data, settedKey, categoryTitle)
+        // that.processVideoData(res.data, settedKey, categoryTitle)
       },
       fail: function (error) {
         // fail
@@ -67,9 +67,10 @@ Page({
       }
     })
   },
-  processDoubanData: function (booksDouban, settedKey, categoryTitle) {
-    var books = [];
-    for (var idx in booksDouban.books) {
+  processVideoData: function (resData, settedKey, categoryTitle) {
+    var videos = [];
+    resData.get
+    for (var idx in resData.tag1.books) {
       var subject = booksDouban.books[idx];
       var title = subject.title;
       if (title.length >= 10) {
