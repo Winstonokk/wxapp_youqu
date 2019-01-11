@@ -12,7 +12,9 @@ Page({
     //上方tab
     navTab: ["热点", "搞笑", "娱乐","精品"],
     currentNavtab: "0",
-    indicatorDots: false
+    indicatorDots: false,
+
+    videoimage: "block" //默认显示视频封面
   },
 
   switchTab: function (e) {
@@ -59,7 +61,7 @@ Page({
       },
       success: function (res) {
         console.log(res)
-        // that.processVideoData(res.data, settedKey, categoryTitle)
+        that.processVideoData(res.data, settedKey, categoryTitle)
       },
       fail: function (error) {
         // fail
@@ -69,39 +71,58 @@ Page({
   },
   processVideoData: function (resData, settedKey, categoryTitle) {
     var videos = [];
-    resData.get
-    for (var idx in resData.tag1.books) {
-      var subject = booksDouban.books[idx];
+    var allVideos=[];
+    allVideos = resData[categoryTitle];
+    
+    for (var idx in allVideos) {
+      var subject = allVideos[idx];
+
       var title = subject.title;
       if (title.length >= 10) {
         title = title.substring(0, 10) + "...";
       }
-      var author = subject.author;
-      var publisher = subject.publisher;
-      var pubdate = subject.pubdate;
-      var summary = subject.summary;
-      if (summary.length >= 30) {
-        summary = "&nbsp;&nbsp;" + summary.substring(0, 30) + "...";
-      }
-      // [1,1,1,1,1] [1,1,1,0,0]
+      var author = subject.videosource;
+      var pubdate = subject.ptime;
+      var playCount = subject.playCount;
+      var cover = subject.cover;
+      var mp4_url = subject.mp4_url;
+      
       var temp = {
-        stars: util.convertToStarsArray(subject.rating.average / 2),
+        author: author,
         title: title,
-        average: subject.rating.average,
-        coverageUrl: subject.images.large,
-        bookId: subject.id,
-        publisher: author + "/" + publisher + "/" + pubdate,
-        summary: summary
+        pubdate: pubdate,
+        playCount: playCount,
+        cover: cover,
+        mp4_url: mp4_url
       }
-      books.push(temp)
+      videos.push(temp)
     }
     var readyData = {};
     readyData[settedKey] = {
       categoryTitle: categoryTitle,
-      books: books
+      videos: videos
     }
     this.setData(readyData);
     console.log(readyData);
+  },
+  /**
+   * 视频出错回调
+   */
+  videoErrorCallback: function (e) {
+    console.log('视频错误信息:' + e.detail.errMsg);
+  },
+
+  //点击播放按钮，封面图片隐藏,播放视频
+  bindplay: function (e) {
+    this.setData({
+      tab_image: "none"
+    }),
+      this.videoCtx.play()
+  },
+
+  onReady() {
+    this.videoCtx = wx.createVideoContext('myVideo')
   }
+
 
 })

@@ -1,5 +1,6 @@
 var util = require('../../utils/util.js')
 var app = getApp();
+var start_page = 0;
 Page({
 
   /**
@@ -29,7 +30,7 @@ Page({
     var tag2 = "热门";
     var tag3 = "推荐";
     var fields = "id,title,subtitle,origin_title,rating,author,translator,publisher,pubdate,summary,images,pages,price,binding,isbn13,series,alt";
-    var count = 20;
+    var count =10;
     var start = 0;
     var newBookUrl = app.globalData.doubanBase +
       "/v2/book/search" + "?start=" + start + "&count=" + count + "&tag=" + tag1 + "&fields=" + fields;
