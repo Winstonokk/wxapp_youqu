@@ -1,6 +1,6 @@
 <template name="videoTemplate">
 
-  <view class="video">
+  <!-- <view class="video">
     <video id="myVideo" class="myVideo" src="http://image.whlwd.com/video-qOAvRDdOkvOTiL6aowpgGtVAFKIbFZJ8anNfufzd.mp4" custom-cache="{{false}}" binderror="videoErrorCallback">
     </video>
     <cover-view class="controls" style="display:{{tab_image}};">
@@ -9,6 +9,28 @@
     <cover-view class="play" style="display:{{tab_image}};z-index:200;">
       <cover-image bindtap="bindplay" src="/images/video_play.png" style="width:160rpx;" />
     </cover-view>
-  </view>
+  </view> -->
+
+  
+    <view class="item-box " >
+      <!-- 标题层 -->
+      <view class="video-title-box">
+        <view class='video-title'>{{title}}</view>
+      </view>
+
+      <!-- 视频图片层 -->
+      <view data-id="{{index}}" class="video-image-box" style="display: {{ _index == index ? 'none' : 'block' }};" bindtap="videoPlay">
+        <view class="video-cover-box">
+          <image class="video-image" src="{{cover}}" mode="aspectFit">
+          </image>
+        </view>
+        <!-- 视频按钮 -->
+        <image class="video-image-play" src="/images/video_play.png" mode="scaleToFill"></image>
+      </view>
+
+      <!-- 视频播放层 -->
+      <video src="{{mp4_url}}" data-id="{{index}}" class='video' wx:if="{{_index == index}}" objectFit='contain' autoplay='true' controls></video>
+
+</view>
   
 </template>

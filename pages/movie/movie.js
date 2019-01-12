@@ -17,8 +17,6 @@ Page({
     currentNavtab: "0",
     indicatorDots: false,
 
-    videoimage: "block" //默认显示视频封面
-
   },
 
   switchTab: function(e) {
@@ -34,14 +32,14 @@ Page({
     var type1 = "1";
     var type2 = "2";
     var type3 = "4";
-    var page=1;
+    var page = 1;
 
     var huaxu_VideosUrl = app.globalData.videoBase +
-      "/v1/index?page=" + page + "&type=" + type1 ;
+      "/v1/index?page=" + page + "&type=" + type1;
     var yugao_VideosUrl = app.globalData.videoBase +
-      "/v1/index?page=" + page + "&type=" + type2 ;
+      "/v1/index?page=" + page + "&type=" + type2;
     var shishang_VideosUrl = app.globalData.videoBase +
-      "/v1/index?page=" + page + "&type=" + type3 ;
+      "/v1/index?page=" + page + "&type=" + type3;
 
     this.getVideoListData(huaxu_VideosUrl, "huaxu_Videos", "花絮");
     this.getVideoListData(yugao_VideosUrl, "yugao_Videos", "预告");
@@ -96,9 +94,7 @@ Page({
       var subject = allVideos[idx];
 
       var title = subject.title;
-      // if (title.length >= 10) {
-      //   title = title.substring(0, 10) + "...";
-      // }
+
       var author = subject.anchor;
       var avatar = subject.avatar;
       var playCount = subject.hot;
@@ -107,9 +103,9 @@ Page({
       var id = subject.id;
 
       var temp = {
-        id:id,
+        id: id,
         author: author,
-        avatar:avatar,
+        avatar: avatar,
         title: title,
         playCount: playCount,
         cover: cover,
@@ -129,12 +125,12 @@ Page({
   /**
    * 视频出错回调
    */
-  videoErrorCallback: function (e) {
+  videoErrorCallback: function(e) {
     console.log('视频错误信息:' + e.detail.errMsg);
   },
 
   // 点击cover播放，其它视频结束
-  videoPlay: function (e) {
+  videoPlay: function(e) {
     var _index = e.currentTarget.dataset.id
     this.setData({
       _index: _index
@@ -142,26 +138,16 @@ Page({
     //停止正在播放的视频
     var videoContextPrev = wx.createVideoContext(_index + "")
     videoContextPrev.stop();
-Console.log("视频开始播放第"+_index);
-    setTimeout(function () {
-      //将点击视频进行播放
-      var videoContext = wx.createVideoContext(_index + "")
-      videoContext.play();
-    }, 500)
+    console.log("视频开始播放第" + _index);
+    //将点击视频进行播放
+    var videoContext = wx.createVideoContext(_index + "")
+    videoContext.play();
+    // setTimeout(function() {
+    //   //将点击视频进行播放
+    //   var videoContext = wx.createVideoContext(_index + "")
+    //   videoContext.play();
+    // }, 200)
   },
-
-  // //点击播放按钮，封面图片隐藏,播放视频
-  // bindplay: function (e) {
-  //   this.setData({
-  //     tab_image: "none"
-  //   }),
-  //   console.log("视频开始播放");
-  //     this.videoCtx.play()
-  // },
-
-  // onReady() {
-  //   this.videoCtx = wx.createVideoContext('myVideo')
-  // }
 
 
 })
