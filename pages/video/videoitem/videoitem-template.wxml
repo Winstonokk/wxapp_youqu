@@ -1,0 +1,14 @@
+<template name="videoTemplate">
+
+  <view class="video">
+    <video id="myVideo" class="myVideo" src="http://image.whlwd.com/video-qOAvRDdOkvOTiL6aowpgGtVAFKIbFZJ8anNfufzd.mp4" custom-cache="{{false}}" binderror="videoErrorCallback">
+    </video>
+    <cover-view class="controls" style="display:{{tab_image}};">
+      <cover-image src="{{cover}}" />
+    </cover-view>
+    <cover-view class="play" style="display:{{tab_image}};z-index:200;">
+      <cover-image bindtap="bindplay" src="/images/video_play.png" style="width:160rpx;" />
+    </cover-view>
+  </view>
+  
+</template>

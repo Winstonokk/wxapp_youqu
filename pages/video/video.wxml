@@ -1,3 +1,4 @@
+<import src="/pages/video/videolist/videolist-template.wxml" />
 <view class="top-tab flex-wrp flex-tab ">
   <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:key="item" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
     {{itemName}}
@@ -8,34 +9,25 @@
 
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
 
-    <view class="video">
-    
-      <video id="myVideo" class="myVideo" src="http:\/\/image.whlwd.com\/video-B3tWnDRjpx2NEsF7TBmrtydWUpNhUuxdbDUmYnjI.mp4"
-        custom-cache="{{false}}" binderror="videoErrorCallback">
-      </video>
-      <cover-view class="controls" style="display:{{tab_image}};">
-        <cover-image src="/images/video.jpg" />
-      </cover-view>
-      <cover-view class="play" style="display:{{tab_image}};z-index:200;">
-        <cover-image bindtap="bindplay" src="/images/play.png" style="width:160rpx;" />
-      </cover-view>
+     <view class='videos-template'>
+      <template is="videoListTemplate" data="{{...huaxu_Videos}}" />
     </view>
 
   </view>
 
   <view class="ctnt1" hidden="{{currentNavtab==1 ? '' : true}}">
-    <text>搞笑</text>
+    <view class='videos-template'>
+      <template is="videoListTemplate" data="{{...yugao_Videos}}" />
+    </view>
 
   </view>
 
   <view class="ctnt2" hidden="{{currentNavtab==2 ? '' : true}}">
 
-    <text>娱乐</text>
+    <view class='videos-template'>
+      <template is="videoListTemplate" data="{{...shishang_Videos}}" />
+    </view>
   </view>
 
-  <view class="ctnt3" hidden="{{currentNavtab==3 ? '' : true}}">
-
-    <text>精品</text>
-  </view>
 
 </scroll-view>

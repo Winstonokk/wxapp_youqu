@@ -16,6 +16,7 @@ Page({
     indicatorDots: false,
 
     videoimage: "block" //默认显示视频封面
+
   },
 
   switchTab: function(e) {
@@ -122,18 +123,20 @@ Page({
     this.setData(readyData);
     console.log(readyData);
   },
+
   /**
    * 视频出错回调
    */
-  videoErrorCallback: function(e) {
+  videoErrorCallback: function (e) {
     console.log('视频错误信息:' + e.detail.errMsg);
   },
 
   //点击播放按钮，封面图片隐藏,播放视频
-  bindplay: function(e) {
+  bindplay: function (e) {
     this.setData({
-        tab_image: "none"
-      }),
+      tab_image: "none"
+    }),
+    console.log("视频开始播放");
       this.videoCtx.play()
   },
 
