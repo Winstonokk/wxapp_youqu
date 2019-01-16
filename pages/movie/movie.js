@@ -23,6 +23,8 @@ Page({
     this.setData({
       currentNavtab: e.currentTarget.dataset.idx
     });
+
+
   },
 
   /**
@@ -100,7 +102,7 @@ Page({
       var playCount = subject.hot;
       var cover = subject.cover;
       var mp4_url = subject.url;
-      var id = subject.id;
+      var id = settedKey+subject.id;
 
       var temp = {
         id: id,
@@ -131,6 +133,7 @@ Page({
 
   // 点击cover播放，其它视频结束
   videoPlay: function(e) {
+    console.log(e.currentTarget.dataset);
     var _index = e.currentTarget.dataset.id
     this.setData({
       _index: _index

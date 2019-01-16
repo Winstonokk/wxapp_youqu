@@ -1,1 +1,70 @@
-/* pages/main/mine/mine.wxss */
+
+.userinfo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d827d7;
+}
+
+.user-avater {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 50rpx;
+  border-radius: 50%;
+}
+
+.user-nickname {
+  margin-top: 10rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 50rpx;
+}
+
+page {
+  height: 100%;
+  background-color: #fff;
+}
+
+text {
+  font-family: MicroSoft Yahei;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.view-devider {
+  height: 20rpx;
+  background-color: #F0F4F3;
+}
+
+.view-devider2 {
+  height: 50rpx;
+  background-color: #F0F4F3;
+}
+
+.menu {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10rpx, 20rpx, 0, 20rpx;
+}
+
+.menu-image {
+  height: 60rpx;
+  width: 60rpx;
+  padding-left: 20rpx;
+}
+
+.menu-text {
+  font-family: MicroSoft Yahei;
+  font-size: 24rpx;
+  color: #000;
+  text-align: center;
+  padding-left: 10rpx;
+}
+
+.jiantou-image {
+  height: 30rpx;
+  width: 30rpx;
+}

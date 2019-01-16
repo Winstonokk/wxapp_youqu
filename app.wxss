@@ -31,3 +31,13 @@
   color: #ffffff;
   border-bottom: solid 2px #ffffff;
 }
+
+text{
+    font-family: MicroSoft Yahei;
+    font-size: 24rpx;
+    color: #666;
+}
+
+input{
+    font-family: MicroSoft YaHei;
+}

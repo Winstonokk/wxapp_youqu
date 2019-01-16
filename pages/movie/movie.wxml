@@ -17,7 +17,7 @@
         </view>
 
         <!-- 视频图片层 -->
-        <view data-id="{{index}}" class="video-image-box" style="display: {{ _index == index ? 'none' : 'block' }};" bindtap="videoPlay">
+        <view data-id="{{item.id}}" class="video-image-box" style="display: {{ _index == item.id ? 'none' : 'block' }};" bindtap="videoPlay">
           <view class="video-cover-box">
             <image class="video-image" src="{{item.cover}}" mode="aspectFit">
             </image>
@@ -27,7 +27,7 @@
         </view>
 
         <!-- 视频播放层 -->
-        <video src="{{item.mp4_url}}" data-id="{{index}}" class='video' wx:if="{{_index == index}}" objectFit='contain' autoplay='true' controls></video>
+        <video src="{{item.mp4_url}}" data-id="{{item.id}}" class='video' wx:if="{{_index == item.id}}" objectFit='contain' autoplay='true' controls></video>
 
 
 

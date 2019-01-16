@@ -1,2 +1,36 @@
-<!--pages/main/mine/mine.wxml-->
-<text>pages/main/mine/mine.wxml</text>
+<view class='userinfo-container'>
+  <image class='user-avater' src='/images/splash_icon.png'> </image>
+  <text class='user-nickname'>歇斯底里 </text>
+</view>
+<view class='view-devider'></view>
+<!-- 书籍浏览，美女壁纸，视频收藏,设置 -->
+<view class='menu'>
+  <image class='menu-image' src='/images/book_menu.png'></image>
+  <text class='menu-text'>书籍浏览</text>
+  <!-- <image class='jiantou-image' src='/images/jiantou.png'></image> -->
+</view>
+
+<view class='menu'>
+  <image class='menu-image' src='/images/girl_menu.png'></image>
+  <text class='menu-text'>美女壁纸</text>
+  <!-- <image class='jiantou-image' src='/images/jiantou.png'></image> -->
+</view>
+
+<view class='menu'>
+  <image class='menu-image' src='/images/video_menu.png'></image>
+  <text class='menu-text'>视频收藏</text>
+  <!-- <image class='jiantou-image' src='/images/jiantou.png'></image> -->
+</view>
+<view class='view-devider2'></view>
+
+<view class='menu'>
+  <image class='menu-image' src='/images/setting_menu.png'></image>
+  <text class='menu-text'>设置</text>
+  <!-- <image class='jiantou-image' src='/images/jiantou.png'></image> -->
+</view>
+
+<view class='menu'>
+  <image class='menu-image' src='/images/aboutus_menu.png'></image>
+  <text class='menu-text'>关于</text>
+  <!-- <image class='jiantou-image' src='/images/jiantou.png'></image> -->
+</view>
