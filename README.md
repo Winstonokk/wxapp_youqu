@@ -8,6 +8,7 @@ app主要截图:
 ![image](https://github.com/wangfeng19930909/wxapp_youqu/blob/master/screenshot/2.png)
 ![image](https://github.com/wangfeng19930909/wxapp_youqu/blob/master/screenshot/3.png)
 ![image](https://github.com/wangfeng19930909/wxapp_youqu/blob/master/screenshot/4.png)
+![image](https://github.com/wangfeng19930909/wxapp_youqu/blob/master/screenshot/5.png)
 
 
 *****功能模块：
